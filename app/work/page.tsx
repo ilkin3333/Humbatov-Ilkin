@@ -49,10 +49,7 @@ const projects = [
 const Work = () => {
   const [project, setProject] = useState(projects[0]);
 
-  const handleSlideChange = (swiper) => {
-    const currentIndex = swiper.activeIndex;
-    setProject(projects[currentIndex]);
-  };
+
 
   return (
     <motion.section
@@ -126,7 +123,7 @@ const Work = () => {
               spaceBetween={30}
               slidesPerView={1}
               className="xl:h-[520px] mb-12"
-              onSlideChange={handleSlideChange}
+              
             >
               {projects.map((project, index) => (
                 <SwiperSlide key={index} className="w-full">
