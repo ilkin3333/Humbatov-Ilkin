@@ -1,10 +1,10 @@
 import {Button} from "@/components/ui/button";
 import { FiDownload } from  'react-icons/fi';
 
+
 import Social from "@/components/ui/Social";
 import Photo from "@/components/ui/Photo";
 import Stats from "@/components/ui/Stats"
-
 const Home =() => {
 return (
   <section className="pt-4 pb-12 xl:pt-0 xl:pb-0">
