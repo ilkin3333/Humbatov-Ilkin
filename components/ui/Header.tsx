@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Button } from "./button"; // `Button` bileşenini kullandığınıza emin olun
-import Nav from "./nav"; // `Nav` bileşenini büyük harf ile import edin
+import { Button } from "./button"; 
+import Nav from "./nav"; 
 import MobileNav from "./MobileNav";
 
 const Header = () => {
