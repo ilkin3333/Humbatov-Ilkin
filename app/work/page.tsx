@@ -48,8 +48,7 @@ const projects = [
 
 const Work = () => {
   const [project, setProject] = useState(projects[0]);
-
-
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
   return (
     <motion.section
@@ -66,21 +65,21 @@ const Work = () => {
             <div className="flex flex-col gap-[30px] h-[50%]">
               {/* Outline num */}
               <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
-                {project.num}
+                {projects[activeSlideIndex].num}
               </div>
               {/* Project category */}
               <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.category} project
+                {projects[activeSlideIndex].category} project
               </h2>
               {/* Project description */}
-              <p className="text-white/60">{project.description}</p>
+              <p className="text-white/60">{projects[activeSlideIndex].description}</p>
               {/* Stack */}
               <ul className="flex gap-4">
-                {project.stack.map((item, index) => (
+                {projects[activeSlideIndex].stack.map((item, index) => (
                   <li key={index} className="text-xl text-accent">
                     {item.name}
                     {/* Remove the last comma */}
-                    {index !== project.stack.length - 1 && ","}
+                    {index !== projects[activeSlideIndex].stack.length - 1 && ","}
                   </li>
                 ))}
               </ul>
@@ -89,7 +88,7 @@ const Work = () => {
               {/* Buttons */}
               <div className="flex items-center gap-4">
                 {/* Live project button */}
-                <Link href={project.live}>
+                <Link href={projects[activeSlideIndex].live}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -103,7 +102,7 @@ const Work = () => {
                 </Link>
 
                 {/* GitHub project button */}
-                <Link href={project.github}>
+                <Link href={projects[activeSlideIndex].github}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -123,7 +122,7 @@ const Work = () => {
               spaceBetween={30}
               slidesPerView={1}
               className="xl:h-[520px] mb-12"
-              
+              onSlideChange={(swiper) => setActiveSlideIndex(swiper.activeIndex)}
             >
               {projects.map((project, index) => (
                 <SwiperSlide key={index} className="w-full">
