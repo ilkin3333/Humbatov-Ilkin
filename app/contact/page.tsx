@@ -24,7 +24,7 @@ const info = [
     {
         icon: <FaMapMarkerAlt />,
         title: "Adress",
-        description: "Xırdalan, Kristal 2"
+        description: "Xırdalan"
     },
 ];
 
