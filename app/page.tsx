@@ -8,8 +8,8 @@ import Stats from "@/components/ui/Stats";
 const Home = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/ilkincv.jpg";
-    link.download = "ilkincv.jpg";
+    link.href = "/mycv.jpg";
+    link.download = "mycv.jpg";
     link.click();
   };
 
